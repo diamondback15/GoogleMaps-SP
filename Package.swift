@@ -42,7 +42,6 @@ let googleMapsBinaryTarget = Target.binaryTarget(name: "GoogleMaps", path: "Sour
 //googleMapsBinaryTarget.linkerSettings = googleMapsLinkerSettings
 
 let googleMapsCoreBinaryTarget = Target.binaryTarget(name: "GoogleMapsCore", path: "Sources/Frameworks/GoogleMapsCore.xcframework")
-//googleMapsCoreBinaryTarget.linkerSettings = googleMapsCore_M4BLinkerSettings
 
 let googleMapsBaseBinaryTarget = Target.binaryTarget(name: "GoogleMapsBase", path: "Sources/Frameworks/GoogleMapsBase.xcframework")
 //googleMapsBaseBinaryTarget.linkerSettings = googleMapsBaseLinkerSettings
