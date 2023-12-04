@@ -3,48 +3,9 @@
 
 import PackageDescription
 
-// Use these linker settings for the respective binary target properties below once support is added
-// Issue link: https://github.com/apple/swift-package-manager/issues/5618
-let googleMapsLinkerSettings: [LinkerSetting] = [
-    .linkedLibrary("z"),
-    .linkedLibrary("c++"),
-    .linkedFramework("CoreData"),
-    .linkedFramework("CoreFoundation"),
-    .linkedFramework("CoreGraphics"),
-    .linkedFramework("CoreImage"),
-    .linkedFramework("CoreLocation"),
-    .linkedFramework("CoreTelephony"),
-    .linkedFramework("CoreText"),
-    .linkedFramework("Foundation"),
-    .linkedFramework("GLKit"),
-    .linkedFramework("ImageIO"),
-    .linkedFramework("Metal"),
-    .linkedFramework("OpenGLES"),
-    .linkedFramework("QuartzCore"),
-    .linkedFramework("SystemConfiguration"),
-    .linkedFramework("UIKit")
-]
-
-let googleMapsBaseLinkerSettings: [LinkerSetting] = [
-    .linkedLibrary("z"),
-    .linkedFramework("CoreFoundation"),
-    .linkedFramework("CoreGraphics"),
-    .linkedFramework("CoreLocation"),
-    .linkedFramework("CoreTelephony"),
-    .linkedFramework("CoreText"),
-    .linkedFramework("Foundation"),
-    .linkedFramework("QuartzCore"),
-    .linkedFramework("Security"),
-    .linkedFramework("UIKit"),
-]
-
 let googleMapsBinaryTarget = Target.binaryTarget(name: "GoogleMaps", path: "Sources/Frameworks/GoogleMaps.xcframework")
-//googleMapsBinaryTarget.linkerSettings = googleMapsLinkerSettings
-
 let googleMapsCoreBinaryTarget = Target.binaryTarget(name: "GoogleMapsCore", path: "Sources/Frameworks/GoogleMapsCore.xcframework")
-
 let googleMapsBaseBinaryTarget = Target.binaryTarget(name: "GoogleMapsBase", path: "Sources/Frameworks/GoogleMapsBase.xcframework")
-//googleMapsBaseBinaryTarget.linkerSettings = googleMapsBaseLinkerSettings
 
 let package = Package(
     name: "GoogleMaps-SP",
