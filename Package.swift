@@ -10,7 +10,7 @@ let googleMapsBaseBinaryTarget = Target.binaryTarget(name: "GoogleMapsBase", pat
 let package = Package(
     name: "GoogleMaps-SP",
     platforms: [
-        .iOS(.v14)
+        .iOS(.v17)
     ],
     products: [
         .library(
