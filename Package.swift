@@ -25,27 +25,6 @@ let googleMapsLinkerSettings: [LinkerSetting] = [
     .linkedFramework("UIKit")
 ]
 
-let googleMapsCore_M4BLinkerSettings: [LinkerSetting] = [
-    .linkedLibrary("z"),
-    .linkedLibrary("c++"),
-    .linkedFramework("CoreData"),
-    .linkedFramework("CoreFoundation"),
-    .linkedFramework("CoreGraphics"),
-    .linkedFramework("CoreImage"),
-    .linkedFramework("CoreLocation"),
-    .linkedFramework("CoreTelephony"),
-    .linkedFramework("CoreText"),
-    .linkedFramework("Foundation"),
-    .linkedFramework("GLKit"),
-    .linkedFramework("ImageIO"),
-    .linkedFramework("Metal"),
-    .linkedFramework("OpenGLES"),
-    .linkedFramework("QuartzCore"),
-    .linkedFramework("Security"),
-    .linkedFramework("SystemConfiguration"),
-    .linkedFramework("UIKit")
-]
-
 let googleMapsBaseLinkerSettings: [LinkerSetting] = [
     .linkedLibrary("z"),
     .linkedFramework("CoreFoundation"),
@@ -59,30 +38,14 @@ let googleMapsBaseLinkerSettings: [LinkerSetting] = [
     .linkedFramework("UIKit"),
 ]
 
-let googlePlacesLinkerSettings: [LinkerSetting] = [
-    .linkedLibrary("z"),
-    .linkedFramework("CoreFoundation"),
-    .linkedFramework("CoreLocation"),
-    .linkedFramework("Foundation"),
-    .linkedFramework("QuartzCore"),
-    .linkedFramework("Security"),
-    .linkedFramework("UIKit")
-]
-
 let googleMapsBinaryTarget = Target.binaryTarget(name: "GoogleMaps", path: "Sources/Frameworks/GoogleMaps.xcframework")
 //googleMapsBinaryTarget.linkerSettings = googleMapsLinkerSettings
-
-let googlePlacesBinaryTarget = Target.binaryTarget(name: "GooglePlaces", path: "Sources/Frameworks/GooglePlaces.xcframework")
-//googlePlacesBinaryTarget.linkerSettings = googlePlacesLinkerSettings
 
 let googleMapsCoreBinaryTarget = Target.binaryTarget(name: "GoogleMapsCore", path: "Sources/Frameworks/GoogleMapsCore.xcframework")
 //googleMapsCoreBinaryTarget.linkerSettings = googleMapsCore_M4BLinkerSettings
 
 let googleMapsBaseBinaryTarget = Target.binaryTarget(name: "GoogleMapsBase", path: "Sources/Frameworks/GoogleMapsBase.xcframework")
 //googleMapsBaseBinaryTarget.linkerSettings = googleMapsBaseLinkerSettings
-
-let googleMapsM4BBinaryTarget = Target.binaryTarget(name: "GoogleMapsM4B", path: "Sources/Frameworks/GoogleMapsM4B.xcframework")
-//googleMapsM4BBinaryTarget.linkerSettings = googleMapsCore_M4BLinkerSettings
 
 let package = Package(
     name: "GoogleMaps-SP",
@@ -110,26 +73,10 @@ let package = Package(
                 "GoogleMapsCore"
             ]
         ),
-        .library(
-            name: "GoogleMapsM4B",
-            targets: [
-                "GoogleMapsM4B",
-                "GoogleMapsBase"
-            ]
-        ),
-        .library(
-            name: "GooglePlaces",
-            targets: [
-                "GooglePlaces",
-                "GoogleMapsBase"
-            ]
-        )
     ],
     targets: [
         googleMapsBinaryTarget,
         googleMapsBaseBinaryTarget,
-        googleMapsCoreBinaryTarget,
-        googleMapsM4BBinaryTarget,
-        googlePlacesBinaryTarget
+        googleMapsCoreBinaryTarget
     ]
 )
